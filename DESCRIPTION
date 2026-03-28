@@ -1,0 +1,29 @@
+Package: Multilevelerror
+Type: Package
+Title: Influence Diagnostics for Multilevel Meta-Analysis
+Version: 0.1.0
+Date: 2026-02-27
+Authors@R: 
+    c(person(given = "Mahmood", family = "Ahmad",
+             email = "mahmood726@gmail.com",
+             role = c("aut", "cre")))
+Description: Provides diagnostic tools for identifying influential cases and studies in multilevel meta-analysis (3-level models). Implements leave-one-out procedures for rma.mv objects, calculating DFBETAS, Cook's distance, and changes in variance components to assess the stability of pooled effect sizes.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 3.5.0)
+Imports: 
+    metafor (>= 3.0.0),
+    stats,
+    ggplot2,
+    parallel,
+    utils
+Suggests: 
+    testthat (>= 3.0.0),
+    metadat,
+    knitr,
+    rmarkdown
+VignetteBuilder: 
+    knitr
+RoxygenNote: 7.3.3
