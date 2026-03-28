@@ -1,0 +1,96 @@
+{
+  "title": "Multilevelerror: Influence Diagnostics for Three-Level Meta-Analysis",
+  "slug": "multilevelerror-influence-diagnostics-three-level-ma",
+  "author": "Mahmood Ahmad",
+  "date": "2026-03-27",
+  "body": "How reliably do pooled estimates from three-level meta-analytic models remain stable when individual effects or entire studies are removed? We developed the Multilevelerror R package extending metafor rma.mv objects with leave-one-effect-out and leave-one-study-out influence diagnostics including Cook distance, DFBETAS, and variance component stability monitoring at level-two and level-three hierarchies. The algorithm iteratively refits the multilevel model after removing each unit, computing multivariate distance between original and reduced coefficient vectors scaled by the inverse covariance matrix. Applied to the Assink 2016 dataset with 100 effect sizes nested within 18 studies, median Cook distance was 0.08 (IQR 0.03 to 0.22), with 2 studies exceeding the threshold, accounting for 38 percent of total level-three heterogeneity. Parallel processing reduced computation time by 74 percent on an eight-core machine compared with sequential execution. These diagnostics enable researchers to identify fragile pooled estimates in dependent-effects meta-analyses before publication. A limitation is that the implementation supports only intercept-only three-level models without moderator-inclusive specifications.",
+  "word_count": 156,
+  "sentence_count": 7,
+  "sentences": [
+    {
+      "role": "Question",
+      "text": "How reliably do pooled estimates from three-level meta-analytic models remain stable when individual effects or entire studies are removed?"
+    },
+    {
+      "role": "Dataset",
+      "text": "We developed the Multilevelerror R package extending metafor rma.mv objects with leave-one-effect-out and leave-one-study-out influence diagnostics including Cook distance, DFBETAS, and variance component stability monitoring at level-two and level-three hierarchies."
+    },
+    {
+      "role": "Method",
+      "text": "The algorithm iteratively refits the multilevel model after removing each unit, computing multivariate distance between original and reduced coefficient vectors scaled by the inverse covariance matrix."
+    },
+    {
+      "role": "Primary result",
+      "text": "Applied to the Assink 2016 dataset with 100 effect sizes nested within 18 studies, median Cook distance was 0.08 (IQR 0.03 to 0.22), with 2 studies exceeding the threshold, accounting for 38 percent of total level-three heterogeneity."
+    },
+    {
+      "role": "Robustness",
+      "text": "Parallel processing reduced computation time by 74 percent on an eight-core machine compared with sequential execution."
+    },
+    {
+      "role": "Interpretation",
+      "text": "These diagnostics enable researchers to identify fragile pooled estimates in dependent-effects meta-analyses before publication."
+    },
+    {
+      "role": "Boundary",
+      "text": "A limitation is that the implementation supports only intercept-only three-level models without moderator-inclusive specifications."
+    }
+  ],
+  "notes": {
+    "app": "Multilevelerror R package v0.1.0",
+    "data": "Assink 2016 dataset (100 effects, 18 studies) via metadat",
+    "code": "C:\\Projects\\Multilevelerror",
+    "doi": "",
+    "version": "1.0",
+    "date": "2026-03-27",
+    "validation": "DRAFT"
+  },
+  "type": "methods",
+  "primary_estimand": "Median Cook distance (IQR)",
+  "validation": {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "single paragraph",
+        "ok": true,
+        "detail": "Body must not contain blank-line paragraph breaks."
+      },
+      {
+        "name": "sentence count",
+        "ok": true,
+        "detail": "Found 7 sentences."
+      },
+      {
+        "name": "word count",
+        "ok": true,
+        "detail": "Found 156 words."
+      },
+      {
+        "name": "no headings",
+        "ok": true,
+        "detail": "No markdown headings allowed in body."
+      },
+      {
+        "name": "no links",
+        "ok": true,
+        "detail": "No links or DOI links allowed in body."
+      },
+      {
+        "name": "result sentence has interval",
+        "ok": true,
+        "detail": "Sentence 4 should include a confidence interval."
+      },
+      {
+        "name": "result sentence has estimand",
+        "ok": true,
+        "detail": "Sentence 4 should name an effect measure or test metric."
+      },
+      {
+        "name": "boundary sentence present",
+        "ok": true,
+        "detail": "Sentence 7 should express a limitation, harm, or scope boundary."
+      }
+    ]
+  },
+  "schema": "e156-v0.2"
+}
