@@ -93,8 +93,12 @@ influence_multilevel <- function(model, level = c("effect", "study"), study_var 
   if (length(valid_results) == 0) stop("All leave-one-out models failed to converge.")
   
   ids_valid <- sapply(valid_results, function(x) x$id)
-  betas <- t(sapply(valid_results, function(x) x$beta))
-  sigma2s <- t(sapply(valid_results, function(x) x$sigma2))
+  # Bind one row per unit so the result is always units x components.
+  # t(sapply(...)) silently transposes to 1 x units when beta/sigma2 has
+  # length 1 (the common single-coefficient / single-variance case), which
+  # broke downstream indexing such as sigma2s[, 1] in the sigma plot.
+  betas <- do.call(rbind, lapply(valid_results, function(x) x$beta))
+  sigma2s <- do.call(rbind, lapply(valid_results, function(x) x$sigma2))
   cooks_d <- sapply(valid_results, function(x) x$cook_d)
   
   out <- list(
